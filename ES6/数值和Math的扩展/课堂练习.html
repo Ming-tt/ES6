@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*
+课堂练习：
+*/
+
+/*
+1.const bookArr=[ 
+	{ id:1, bookName:"三国演义" },
+	{ id:2, bookName:"水浒传" },
+	{ id:3, bookName:"红楼梦" },
+	{ id:4, bookName:"西游记" }
+	]
+	找出id为3的一项，并且在控制台上输出”红楼梦”
+*/
+const bookArr=[ 
+	{ id:1, bookName:"三国演义" },
+	{ id:2, bookName:"水浒传" },
+	{ id:3, bookName:"红楼梦" },
+	{ id:4, bookName:"西游记" }
+]
+for(let i=0;i<bookArr.length;i++){
+	if(bookArr[i].id === 3){
+		console.log(bookArr[i].bookName);
+		break;
+	}
+}
+/*
+2. 使用ES6改下面的模板
+   let iam = "我是";
+   let name = "狗蛋";
+   let sex = "m";
+   let hobby = "吹牛";
+   let str  = "大家好,"+iam+name+",性别"+sex+",爱好"+hobby+ ",多指教。";
+
+   提示：性别的对应关系，"m": 男，"f": 女
+*/
+   let iam = "我是";
+   let name = "superman";
+   let sex = "a";
+   let hobby = "吹牛皮";
+   let str  = "大家好,"+iam+name+",性别"+sex+",爱好"+hobby+ ",多指教。";
+   let strT=`大家好${iam}${name}性别${sex=='m'?'男':(sex=='f'?'女':'未知')}爱好${hobby}请多指教`;
+   console.log(strT);
+//3. 定义函数，求多个数相乘
+function multiply1(...args){
+		let sum=1;
+		for(var i=0;i<args.length;i++){
+			sum*=args[i];
+		}
+		return sum;
+	}
+console.log(multiply1(5,8,9));
+//4. 定义函数，检测一个数是不是整数，不传参数检测数字3.0
+function detection(a=3.0){
+	if(Number.isInteger(a)){
+		console.log('是');
+	}else{
+		console.log('否');	
+	}
+}
+detection();
+//5.实现一个类似jquery的css方法
+function attr(el,...args){
+		if(args.length===1){
+			if(typeof args[0] === 'string'){
+				return el.getAttribute(args[0]);
+			}else if(typeof args[0]==='object'){
+				for(let k in args[0]){
+					//el[k]=args[0][k]
+					el.setAttribute(k,args[0][k]);
+				}
+			}
+		}else if(args.length === 2){
+			el[args[0]]=args[1];
+		}
+	}
+</script>

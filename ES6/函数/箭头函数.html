@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+//箭头函数
+	let fn= () => {
+		alert(1);
+	};
+	fn();
+
+
+
+	//1-当函数只有一个形参时可以省略小括号    两个及其以上不能省略
+	let faa= aa =>{
+		alert(aa);
+	}
+	faa('tt');
+	//2-当函数体只有一句话时可以省略大括号
+	let ft=aa=> alert(aa);
+	ft(5);
+	//3-当函数体省略大括号是自带return
+	let pow=(x,y)=> x**y;	
+	console.log(pow(5,8));
+	//4-箭头函数不能被new
+	let Att=() =>{};
+	new Att();
+	//5-箭头函数内部没有arguments
+	let fr = ()=>{
+		console.log(arguments);
+	}
+	fr();
+	//6-箭头函数内部的this指向父函数的作用域  内部和本身没有this指向问题
+	
+</script>

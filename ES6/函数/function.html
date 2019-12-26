@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// function fn(a){
+	// 	a=a || 1;
+	// 	console.log(a);
+	// }
+	// fn("");//es5有缺陷
+	
+	function fn(a=1){
+		console.log(a);
+	}
+	fn('');
+	//可变参数  ES5
+	//console.log(arguments);//由于参数个数不能确定 所以不能传形参
+	function add(){
+		let sum=0;
+		for(let i=0;i<arguments.length;i++){
+			sum+=arguments[i];
+		}
+		return sum;
+		
+	}
+	console.log(add(1,4,5,6));
+
+
+	//当参数个数不定时  ES6
+	function add(...args){
+		let sum=0;
+		for(var i=0;i<args.length;i++){
+			sum+=args[i];
+		}
+		return sum;
+	}
+	console.log(add(5,8));
+
+
+
+	//属性值的获取 设置
+	function attr(el,...args){
+		if(args.length===1){
+			if(typeof args[0] === 'string'){
+				return el.getAttribute(args[0]);
+			}else if(typeof args[0]==='object'){
+				for(let k in args[0]){
+					//el[k]=args[0][k]
+					el.setAttribute(k,args[0][k]);
+				}
+			}
+		}else if(args.length === 2){
+			el[args[0]]=args[1];
+		}
+	}
+
+
+
+
+	//ES6最大最小值的检测
+	function getMaxAndMin(...args){
+		return {
+			max: Math.max(...args),
+			min: Math.min(...args)
+		};
+	}
+	console.log(getMaxAndMin(5,9,823,74,9,7,2,6,8));
+</script>

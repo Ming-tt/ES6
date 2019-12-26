@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	let a=1;
+	let b=a;
+	b=2;
+	console.log(b);
+	console.log(a);
+
+
+
+
+
+	let arr=[2,4];//==>new Array(2,4);   本身是把arr存放到栈中  把里面的数据存放到堆中   在堆中一般用16进制作为名字   栈中的值保存的是16进制的名字 而不是arr里面的数值  当把arr赋值给arr1时 本身是把16进制的名字 给了arr1  他们共用的是一个16进制的名字  所以无论更改哪一个 都是更改的堆中的东西    
+	let arr1=arr;
+	arr1.push(5);
+	console.log(arr);
+	console.log(arr1);
+
+
+
+
+	/*
+		本质区别:取决于在计算机中存储的地方不同
+
+	
+		引用类型 比较的是地址
+		数据类型 比较的是值
+
+		计算机内存模型
+
+		栈:存放所有的变量名,函数
+			基本类型都是将自己复制的一份  改变的是复制的那一份 而和自身没有影响
+
+		堆:存放引用数据类型的内存地址
+			栈引用了对内存的地址, 地址的传递, 在赋值的时候会将自己的内存地址传递过去
+
+
+	*/
+
+
+</script>		
